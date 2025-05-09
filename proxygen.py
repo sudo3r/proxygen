@@ -119,7 +119,7 @@ def save_proxies():
 async def main():
     global total_proxies, checked_proxies
     
-    parser = argparse.ArgumentParser(description='ProxyGen - Ultra-Fast Proxy Checker')
+    parser = argparse.ArgumentParser(description='ProxyGen - Proxy List Generator')
     parser.add_argument('-o', '--output', default='proxies.txt', 
                        help='Output file path (default: proxies.txt)')
     parser.add_argument('-s', '--sources', nargs='+', default=None,
