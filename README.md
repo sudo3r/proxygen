@@ -9,8 +9,6 @@ pip install aiohttp
 ```
 usage: proxygen.py [-h] [-o OUTPUT] [-s SOURCES [SOURCES ...]] [-w WORKERS] [-t TIMEOUT]
 
-ProxyGen - Proxy List Generator
-
 options:
   -h, --help            show this help message and exit
   -o, --output OUTPUT   Output file path (default: proxies.txt)
