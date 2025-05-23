@@ -8,17 +8,22 @@ async def main(args):
         concurrency=args.concurrency,
         progress=True
     )
-    proxies = await collector.get_working_proxies()
-    print(f"\n==> Found {len(proxies)} working proxies.")
+    output_file = None
     if args.output:
-        with open(args.output, "w") as f:
-            for proxy in proxies:
-                f.write(str(proxy) + "\n")
-        print(f"==> Saved to {args.output}")
-    else:
-        print("==> Working proxies:")
-        for proxy in proxies:
+        output_file = open(args.output, "w")
+    count = 0
+    async for proxy in collector.iter_working_proxies():
+        count += 1
+        if output_file:
+            output_file.write(str(proxy) + "\n")
+            output_file.flush()
+        else:
             print(proxy)
+    if output_file:
+        output_file.close()
+        print(f"\n==> Saved {count} proxies to {args.output}")
+    else:
+        print(f"\n==> Found {count} working proxies.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Proxy List Generator")
