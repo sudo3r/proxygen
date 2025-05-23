@@ -122,6 +122,26 @@ class ProxyCollector:
             return []
         return await self._check_proxies(proxies)
 
+    async def iter_working_proxies(self):
+        proxies = await self._collect_proxies()
+        if not proxies:
+            return
+        self._total = len(proxies)
+        self._checked = 0
+        self._working = 0
+        async with aiohttp.ClientSession() as session:
+            semaphore = asyncio.Semaphore(self.concurrency)
+            async def check_and_yield(proxy):
+                async with semaphore:
+                    is_working = await self._check_proxy(session, proxy)
+                    if is_working:
+                        return proxy
+            tasks = [asyncio.create_task(check_and_yield(proxy)) for proxy in proxies]
+            for task in asyncio.as_completed(tasks):
+                proxy = await task
+                if proxy:
+                    yield proxy
+
 # Example usage:
 # async def main():
 #     collector = ProxyCollector(progress=True)
