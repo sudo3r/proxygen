@@ -103,8 +103,8 @@ async def check_proxies(proxies, timeout, concurrency, output_file):
 async def main():
     parser = argparse.ArgumentParser(description="Proxy List Generator")
     parser.add_argument('-o', '--output', required=True, help="Output file for working proxies")
-    parser.add_argument('-c', '--concurrency', type=int, default=100, help="Number of concurrent requests")
-    parser.add_argument('-t', '--timeout', type=int, default=10, help="Timeout in seconds")
+    parser.add_argument('-c', '--concurrency', type=int, default=30, help="Number of concurrent requests")
+    parser.add_argument('-t', '--timeout', type=int, default=3, help="Timeout in seconds")
 
     args = parser.parse_args()
 
