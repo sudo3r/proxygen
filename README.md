@@ -13,6 +13,7 @@ options:
                         Number of concurrent checks
   -o, --output OUTPUT   Output file to save proxies
 ```
+
 ## Module usage
 ```python
 async def main():
