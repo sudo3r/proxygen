@@ -3,15 +3,13 @@ Proxy List Generator
 
 ## Usage
 ```
-usage: proxygen.py [-h] -o OUTPUT [-c CONCURRENCY] [-t TIMEOUT]
-
-Proxy List Generator
+usage: main.py [-h] [-t TIMEOUT] [-c CONCURRENCY] [-o OUTPUT]
 
 options:
   -h, --help            show this help message and exit
-  -o, --output OUTPUT   Output file for working proxies
-  -c, --concurrency CONCURRENCY
-                        Number of concurrent requests
   -t, --timeout TIMEOUT
-                        Timeout in seconds
+                        Timeout for proxy check (seconds)
+  -c, --concurrency CONCURRENCY
+                        Number of concurrent checks
+  -o, --output OUTPUT   Output file to save proxies
 ```
