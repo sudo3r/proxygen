@@ -21,6 +21,5 @@ https://raw.githubusercontent.com/ErcinDedeoglu/proxies/refs/heads/main/proxies/
 https://raw.githubusercontent.com/ErcinDedeoglu/proxies/refs/heads/main/proxies/socks5.txt
 https://raw.githubusercontent.com/themiralay/Proxy-List-World/master/data.txt
 https://raw.githubusercontent.com/casals-ar/proxy-list/main/http
-https://raw.githubusercontent.com/casals-ar/proxy-list/main/https
 https://raw.githubusercontent.com/casals-ar/proxy-list/main/socks4
 https://raw.githubusercontent.com/casals-ar/proxy-list/main/socks5
