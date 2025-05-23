@@ -101,7 +101,7 @@ async def check_proxies(proxies, timeout, concurrency, output_file):
         print(f"\n[+] Found {working_proxies} working proxies", flush=True)
 
 async def main():
-    parser = argparse.ArgumentParser(description="GitHub-based proxy scraper and checker tool")
+    parser = argparse.ArgumentParser(description="Proxy List Generator")
     parser.add_argument('-o', '--output', required=True, help="Output file for working proxies")
     parser.add_argument('-c', '--concurrency', type=int, default=100, help="Number of concurrent requests")
     parser.add_argument('-t', '--timeout', type=int, default=10, help="Timeout in seconds")
